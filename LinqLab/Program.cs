@@ -90,28 +90,28 @@ namespace LinqLab
             }
             Console.WriteLine();
 
-            List<Student> stuOver21 = students.Where(x => x.Age > 21 && x.Age % 2 == 0).ToList();
+            List<Student> studentsOver21 = students.Where(x => x.Age > 21 && x.Age % 2 == 0).ToList();
             Console.WriteLine("All students over 21 and with even ages: ");
-            foreach (Student s in stuOver21)
+            foreach (Student item in studentsOver21)
             {
-                Console.WriteLine(s.Name);
+                Console.WriteLine(item.Name);
             }
             Console.WriteLine();
-            List<Student> teenageStudents = students.Where(x => x.Age >= 13 && x.Age <= 19).ToList();
+            List<Student> teenage = students.Where(x => x.Age >= 13 && x.Age <= 19).ToList();
             Console.WriteLine("All teenage students: ");
-            foreach (Student s in teenageStudents)
+            foreach (Student item in teenage)
             {
-                Console.WriteLine(s.Name);
+                Console.WriteLine(item.Name);
             }
             Console.WriteLine();
-            
-            //List<string> vowelList = new List<string>() { "A", "E", "I", "O", "U" };
-            //List<Student> StartVowel = students.Where(x => vowelList.Any(p => x.Name.StartsWith(p))).ToList();
-            //Console.WriteLine("Students whose name starts with a vowel: ");
-            //foreach (Student item in StartVowel)
-            //{
-            //    Console.WriteLine(item.Name);
-            //}
+
+            List<string> vowelList = new List<string>() { "A", "E", "I", "O", "U" };
+            List<Student> StartVowel = students.Where(x => vowelList.Any(p => x.Name.StartsWith(p))).ToList();
+            Console.WriteLine("Students whose name starts with a vowel: ");
+            foreach (Student item in StartVowel)
+            {
+                Console.WriteLine(item.Name);
+            }
 
 
 
@@ -119,6 +119,6 @@ namespace LinqLab
 
         }
 
-        
+
     }
 }
