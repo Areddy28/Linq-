@@ -8,6 +8,8 @@ namespace LinqLab
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to the Linq Lab!!!");
+            Console.WriteLine();
             var nums = new List<int> { 10, 2330, 112233, 10, 949, 3764, 2942};
             List<Student> students = new List<Student>();
             students.Add(new Student("Jimmy", 13));
@@ -102,13 +104,14 @@ namespace LinqLab
                 Console.WriteLine(s.Name);
             }
             Console.WriteLine();
-            List<string> prefixList = new List<string>() { "A", "E", "I", "O", "U" };
-            List<Student> nameStartWithVowel = students.Where(x => prefixList.Any(p => x.Name.StartsWith(p))).ToList();
-            Console.WriteLine("Students whose name starts with a vowel: ");
-            foreach (Student s in nameStartWithVowel)
-            {
-                Console.WriteLine(s.Name);
-            }
+            
+            //List<string> vowelList = new List<string>() { "A", "E", "I", "O", "U" };
+            //List<Student> StartVowel = students.Where(x => vowelList.Any(p => x.Name.StartsWith(p))).ToList();
+            //Console.WriteLine("Students whose name starts with a vowel: ");
+            //foreach (Student item in StartVowel)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
 
 
 
