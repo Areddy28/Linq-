@@ -76,6 +76,40 @@ namespace LinqLab
             Console.WriteLine($"{young.Name}");
             Console.WriteLine();
 
+            Console.WriteLine("Find oldest student under 25");
+
+            List<Student> oldBelow25 = students.Where(x => x.Age < 25).ToList();
+            int oldAgeUnder25 = oldBelow25.Max(x => x.Age);
+            Console.WriteLine("Oldest student under the age of 25: ");
+            List<Student> Under25 = students.Where(x => x.Age == oldAgeUnder25).ToList();
+            foreach (Student item in Under25)
+            {
+                Console.WriteLine(item.Name);
+            }
+            Console.WriteLine();
+
+            List<Student> stuOver21 = students.Where(x => x.Age > 21 && x.Age % 2 == 0).ToList();
+            Console.WriteLine("All students over 21 and with even ages: ");
+            foreach (Student s in stuOver21)
+            {
+                Console.WriteLine(s.Name);
+            }
+            Console.WriteLine();
+            List<Student> teenageStudents = students.Where(x => x.Age >= 13 && x.Age <= 19).ToList();
+            Console.WriteLine("All teenage students: ");
+            foreach (Student s in teenageStudents)
+            {
+                Console.WriteLine(s.Name);
+            }
+            Console.WriteLine();
+            List<string> prefixList = new List<string>() { "A", "E", "I", "O", "U" };
+            List<Student> nameStartWithVowel = students.Where(x => prefixList.Any(p => x.Name.StartsWith(p))).ToList();
+            Console.WriteLine("Students whose name starts with a vowel: ");
+            foreach (Student s in nameStartWithVowel)
+            {
+                Console.WriteLine(s.Name);
+            }
+
 
 
             //Find the min value 
